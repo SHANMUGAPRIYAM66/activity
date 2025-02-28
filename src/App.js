@@ -239,11 +239,13 @@ function App() {
       { id: 8, name: "Poori for Breakfast", description: "Puffy, golden fried bread with an airy texture." }
       ]
     },
+	
 
   ];
 
    const [selectedItems, setSelectedItems] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('Rice Items');
+const [activeCategory, setActiveCategory] = useState('Breakfast'); // Set "Breakfast" as the default active category
+
   const [scrollIndex, setScrollIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -452,7 +454,7 @@ const handleAddToCartModal = (item) => {
   }
 
   const handleBuyNow = () => {
-    alert(`Proceeding to buy ${selectedItem.name}`);
+    alert(Proceeding to buy ${selectedItem.name});
     handleCloseModal();
   };
 
@@ -485,85 +487,37 @@ const handleViewCartDebounced = debounce(() => {
 
 
     return (
-    <div className={`App ${isBackgroundBlurred ? 'blur' : ''}`}>
+    <div className={App ${isBackgroundBlurred ? 'blur' : ''}}>
       {/* Email and Mobile displayed at the top right */}
   
-    <div className="top-right11" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: isMobile ? '5px' : '10px' }}>
-      <span
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          width: '100%',
-          border: '1px solid #ddd',
-          padding: '3px',
-          borderRadius: '5px',
-          backgroundColor: 'white',
-        }}
-      >
-        <span style={{ display: 'flex', alignItems: 'center' }}>
-          <i className="fab fa-whatsapp" style={{ marginRight: '8px', color: 'green', fontSize: isMobile ? '1.5em' : '2em' }}></i>
-          <span style={{ color: 'black' }}>Mobile: +1(972)-786-2387</span>
-        </span>
-
-        <span style={{ display: 'flex', alignItems: 'center' }}>
-          <i className="fas fa-envelope" style={{ marginLeft: isMobile ? '0' : '1380px', color: 'red', fontSize: isMobile ? '1.5em' : '2em' }}></i>
-          <span style={{ color: 'black' }}>Email</span>
-        </span>
-      </span>
-
-      <div
-  className="view-cart"
-  onClick={handleViewCart}
-  style={{
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center', // Vertically centers the cart icon
-    marginLeft: 'auto', // Pushes the "View Cart" button to the right within its parent container
-	fontSize: isMobile ? '1.5em' : '2em',
-  }}
->
-  <i className="fas fa-shopping-cart"></i> {/* Font Awesome Cart Icon */}
-  {cartItemCount > 0 && (
-    <span
-      className="cart-item-count"
-      style={{
-        marginLeft: '15px',
-        backgroundColor: 'red',
-        color: 'white',
-        borderRadius: '50%',
-        padding: '0 5px',
-      }}
-    >
-      {cartItemCount}
+   <div className="top-right11">
+  <span className="contact-section">
+    <span className="contact-item">
+      <i className="fab fa-whatsapp whatsapp-icon"></i>
+      <span className="contact-text">Mobile: +1(972)-786-2387</span>
     </span>
-  )}
+
+    <span className="contact-item">
+      <i className="fas fa-envelope email-icon"></i>
+      <span className="contact-text">Email</span>
+    </span>
+  </span>
+
+  <div className="view-cart1" onClick={handleViewCart}>
+    <i className="fas fa-shopping-cart"></i>
+    {cartItemCount > 0 && (
+      <span className="cart-item-count">{cartItemCount}</span>
+    )}
+  </div>
 </div>
 
-    </div>
-  
-};
-
- 
- <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', position: 'relative' }}>
+<div className="header-container">
   <img
     src="/Group 6859.png"
     alt="Group 6859"
-    style={{
-      height: isMobile ? '50px' : '70px', // Adjust image size for mobile
-      width: isMobile ? '150px' : '200px', // Adjust image size for mobile
-      position: 'absolute', // Fixed position for both web and mobile
-      left: isMobile ? '-20px' : '150px', // Position the image at a fixed location
-      top: isMobile ? '-30px' : '20px', // Ensure proper positioning from the top
-    }}
+    className={header-image ${isMobile ? 'mobile' : 'desktop'}}
   />
-  <h1 className="data" style={{
-    textAlign: 'center', // Center the text
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    fontSize: isMobile ? '24px' : '48px', // Adjust font size for mobile view
-  }}>
-    Catering Form
-  </h1>
+  <h1 className="header-title">Catering Form</h1>
 </div>
 
 
@@ -798,9 +752,7 @@ const handleViewCartDebounced = debounce(() => {
       <div className="items-container">
        
 	   <h3 className="category-title">
-  <span className="left-symbol">♦-----------------------</span>
-  {activeCategory}
-  <span className="right-symbol">-----------------------♦</span>
+ 
 </h3>
 
         <div className="items">
