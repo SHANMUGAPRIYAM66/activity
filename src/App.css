@@ -1,56 +1,315 @@
-/* /* Global Styles */
+/* Header Container */
+.header-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
 
-/* top email & mobile */
+.header-image {
+  position: absolute;
+}
 
-/* Default styles */
+.header-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Default Desktop View */
+.header-image.desktop {
+  height: 70px;
+  width: 200px;
+  left: 150px;
+  top: 20px;
+}
+
+.header-title {
+  font-size: 48px;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .header-image.desktop {
+    height: 60px;
+    width: 180px;
+    left: 100px;
+    top: 15px;
+  }
+
+  .header-title {
+    font-size: 36px;
+  }
+}
+
+/* Mobile View */
+
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Header */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .header-image {
+    height: 50px;
+    width: 150px;
+    right: 110px;
+    top: 30px;
+    position: relative;
+    margin-bottom: 10px; /* Space between image and the contact details */
+  }
+
+  .header-title {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  /* Contact Section (WhatsApp + Email) */
+  .contact-section {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+
+  .contact-item {
+    justify-content: center;
+    width: auto;
+    margin-bottom: 5px;
+    margin-left: 15px; /* Space between contact items */
+  }
+
+  .contact-text {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .whatsapp-icon,
+  .email-icon {
+    font-size: 1.4em;
+  }
+
+  /* View Cart */
+  .view-cart1 {
+    font-size: 1.4em;
+    margin-top: 40px; /* Move it down from the contact section */
+    margin-bottom: 35px!important; /* Add space between View Cart and header */
+    position: relative;
+    display: block; /* Ensure it's visible */
+	margin-left:350px;
+  }
+
+  .cart-item-count {
+    margin-left: 5px;
+    padding: 0 4px;
+    font-size: 0.8em;
+  }
+
+  /* Top Right Section (Contact + Cart) */
+  .top-right11 {
+    flex-direction: column; /* Stack contact and cart buttons vertically */
+    justify-content: flex-start; /* Align contact and cart to the left */
+    align-items: flex-start; /* Align items to the left */
+    width: 100%;
+    gap: 20px; /* Add space between contact and cart */
+    padding: 10px 0;
+    position: relative;
+  }
+}
+
+
+
+/* Small Phones (optional if needed) */
+@media (max-width: 480px) {
+  .top-right11 {
+    gap: 8px;
+  }
+
+  .contact-section {
+    padding: 6px 8px;
+  }
+
+  .whatsapp-icon,
+  .email-icon {
+    font-size: 1.2em;
+  }
+
+  .view-cart {
+    font-size: 1.2em;
+  }
+
+  .cart-item-count {
+    padding: 0 3px;
+    font-size: 0.7em;
+  }
+}
+
+/* ========================= */
+/* Top Right Section (Contact + Cart) */
+/* ========================= */
+
 .top-right11 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 90%;
+  padding: 5px 0; /* Added some top/bottom spacing */
 }
 
-.top-right11 span {
-  font-size: 24px;
+/* Contact Section (WhatsApp + Email) */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 5px 8px; /* Reduced padding to make it shorter */
+  border-radius: 5px;
+  background-color: white;
 }
 
-/* Media query for smaller screens */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-text {
+  color: black;
+  font-size: 2
+  4px; /* Make text slightly smaller to save height */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.whatsapp-icon {
+  color: green;
+}
+
+.email-icon {
+  color: red;
+}
+
+/* Default Desktop View */
+.whatsapp-icon,
+.email-icon {
+  font-size: 1.8em;
+}
+
+.view-cart {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 1.8em;
+}
+
+.cart-item-count {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0 6px;
+  font-size: 0.8em;
+}
+
+/* Tablet View (Portrait Tablets & Small Laptops) */
+@media (max-width: 1024px) {
+  .top-right11 {
+    gap: 8px;
+  }
+
+  .whatsapp-icon,
+  .email-icon {
+    font-size: 1.5em;
+  }
+
+  .contact-text {
+    font-size: 13px;
+  }
+
+  .view-cart {
+    font-size: 1.5em;
+  }
+}
+
+/* Mobile View */
 @media (max-width: 768px) {
   .top-right11 {
-    flex-direction: column; /* Stack the items vertically */
-    align-items: flex-start; /* Align the items to the left */
-    gap: 5px; /* Reduce space between elements */
+    flex-direction: row; /* Keep contact and cart in one row */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 15px; /* Space between the contact section and the cart */
+    padding: 10px 0;
   }
 
-  .top-right11 span {
-    font-size: 20px; /* Reduce the font size for smaller screens */
+  .contact-section {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .header-image {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .contact-item {
+    margin-bottom: 0;
+    margin-right: 15px; /* Space between contact items */
+  }
+
+  .view-cart {
+    font-size: 1.4em;
+    margin-top: 10px; /* Space above the cart icon */
   }
 }
 
-/* Media query for extra small screens */
+/* Small Phones (optional if needed) */
 @media (max-width: 480px) {
   .top-right11 {
-    gap: 3px; /* Even smaller space between elements */
+    gap: 8px;
   }
 
-  .top-right11 span {
-    font-size: 15px; /* Further reduce font size */
+  .contact-section {
+    padding: 6px 8px;
+  }
+
+  .whatsapp-icon,
+  .email-icon {
+    font-size: 1.2em;
+  }
+
+  .view-cart {
+    font-size: 1.2em;
+  }
+
+  .cart-item-count {
+    padding: 0 3px;
+    font-size: 0.7em;
   }
 }
 
-/* top email & mobile */
-/*h1 */
+
+
+/* Top email & mobile */
 
 
 
-/* h1 */
 
-
-/* Main container to hold categories and dishes */
-/* Categories Column */
-
-
-/* Categories Column */
 /* Dishes Section */
 
 /* Default styles (Web view) */
@@ -125,9 +384,9 @@
 
 .dish-name {
   text-align: left;
-  font-size: 25px; /* Adjust the font size */
-  font-weight: bold; /* Optional */
-  margin-top: 8px; /* Optional, for spacing between image and name */
+  font-size: 25px; 
+  font-weight: bold;
+  margin-top: 8px; 
   color: #c9302c;
 }
 
@@ -149,16 +408,16 @@
   height: 70%;
 }
 
-/* Items Wrapper */
+
 .items {
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px px; /* 10px for rows and 10px for columns */
+  gap: 20px px; 
   width: 100%;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
-/* Item Box Styles */
+
 .items .item-box {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -167,23 +426,23 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 
   display: flex;
-  flex-direction: row-reverse;  /* Swap the order of image and text */
+  flex-direction: row-reverse;  
   justify-content: flex-start;
   align-items: center;
   font-size: 25px;
   width: 650px!important;
-  height: 290px; /* Adjusted height */
+  height: 290px; 
   box-sizing: border-box;
-  position: relative; /* Make the container position relative */
+  position: relative;
 }
 
 /* Item Image Styles */
 .item-box img {
-  width: 270px; /* Increased image width */
-  height: 270px; /* Increased image height */
+  width: 270px; 
+  height: 270px; 
   object-fit: cover;
   border-radius: 8px;
-  margin-left: -2px; /* Space between the image and the text */
+  margin-left: -2px; 
 }
 
 .items-container {
@@ -196,10 +455,11 @@
 
 .items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr)!important; /* This will create 2 columns */
-  gap: 25px 0px!important; /* Adds space between the items */
+  grid-template-columns: repeat(2, 1fr)!important; 
+  gap: 25px 0px!important;
   width: 100%;
-  justify-items: center; /* Centers the items in the grid */
+  justify-items: center; 
+ 
 }
 
 .item-box {
@@ -207,12 +467,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+   margin-left:40px;
 }
 
 .dish-description {
   margin-top:30px!important;
-  text-align: left; /* Align text to the left */
-  flex-grow: 1; /* Allow the text to occupy remaining space */
+  text-align: left; 
+  flex-grow: 1;  
 }
 
 .dish-name{
@@ -222,13 +483,13 @@
 
 .left-symbol, .right-symbol {
   font-size: 30px;
-  margin: 0 10px;  /* Space between the symbols and the title */
+  margin: 0 10px;  
 }
 
 .line {
-  flex-grow: 1;  /* Makes the line stretch across the available space */
-  height: 1px;   /* Line thickness */
-  background-color: black;  /* Line color */
+  flex-grow: 1;  
+  height: 1px;  
+  background-color: black; 
 }
 
 .add-to-cart-btn {
@@ -247,16 +508,16 @@
 
 .add-to-cart {
   color: black;
-  padding: 10px 15px; /* Adjusted padding to make it smaller */
-  border-radius: 50%; /* Circle button */
+  padding: 10px 15px; 
+  border-radius: 50%; 
   cursor: pointer;
-  font-size: 40px; /* Slightly smaller font */
-  position: absolute; /* Position button absolutely within the item box */
-  bottom: 10px; /* Align to the bottom of the image */
-  right: 10px; /* Align to the right side of the image */
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
-  width: 50px;  /* Reduced width for mobile */
-  height: 50px; /* Reduced height for mobile */
+  font-size: 40px; 
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  background-color: rgba(255, 255, 255, 0.7); 
+  width: 50px;  
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,18 +527,21 @@
   background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
 }
 
-/* Mobile View Adjustments */
+
+
+
+
 @media (max-width: 768px) {
-  /* Adjust container to align items properly */
+
   .items-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0; /* Remove extra padding to avoid gaps */
-    margin: 0;  /* Ensure no margin to avoid scrolling */
+    margin: 0;  
   }
 
-  /* Stack items vertically and make them responsive */
+  
   .items {
     display: flex;
     flex-direction: column; /* Stack items vertically on mobile */
@@ -289,83 +553,355 @@
   /* Adjust item box styling */
   .item-box {
     display: flex;
-    flex-direction: column; /* Stack content vertically within the box */
+    flex-direction: column; 
     align-items: center;
     justify-content: flex-start;
-    width: 100%; /* Make the box take full width of the container */
-    max-width: 100%; /* Make sure it doesn't exceed 100% of the width */
-    height: 160px; /* Adjust height for a better balance */
+    width: 100%; 
+    max-width: 100%; 
+    height: 160px; 
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* Prevent overflow issues */
-    margin: 0 auto; /* Center align boxes horizontally */
-    position: relative; /* To position the Add to Cart button */
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    position: relative; 
   }
 
   /* Image adjustments for mobile */
   .item-box img {
-    width: 60%; /* Make image span the full width of the box */
-    height: auto; /* Maintain aspect ratio */
+    width: 60%; 
+    height: auto; 
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 5px; /* Space between image and text */
-    position: relative; /* Allow layering for button positioning */
+    margin-bottom: 5px; 
+    position: relative; 
   }
 
   /* Add to Cart button adjustments for mobile */
   .add-to-cart {
-    position: absolute; /* Position the button relative to the item-box */
-    bottom: 8px; /* Position 10px from the bottom of the image */
+    position: absolute;
+    bottom: 8px; 
 	top:180px;
-    right:14 px; /* Position 10px from the right of the image */
-    font-size: 25px; /* Adjust font size for mobile */
-    width: 40px;  /* Adjust width for mobile */
-    height: 40px; /* Adjust height for mobile */
-    border-radius: 50%; /* Make the button circular */
-    background-color: rgba(255, 255, 255, 0.8); /* Add a standout background color */
-    color: #000000; /* White text color for contrast */
-    border: none; /* Remove border for cleaner look */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    right:14 px; 
+    font-size: 25px; 
+    width: 40px;  
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #000000; 
+    border: none; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
     cursor: pointer;
-    z-index: 10; /* Ensure it appears above the image */
+    z-index: 10; 
   }
 
   /* Dish name styling */
   .dish-name {
-    font-size: 20px; /* Adjust font size for dish name on mobile */
+    font-size: 20px; 
     text-align: center;
     font-weight: bold;
     margin-top: -20px!important;
   }
 
-  /* Dish description styling */
   .dish-description {
-    font-size: 16px; /* Adjust font size for description */
+    font-size: 16px; 
     margin-top: 5px;
     text-align: center;
-    padding: 0 10px; /* Add some padding for better text alignment */
+    padding: 0 10px; 
   }
 
-  /* Symbol size adjustment */
   .left-symbol, .right-symbol {
-    font-size: 20px; /* Adjust font size for category symbols */
+    font-size: 20px; 
   }
 
-  /* Hide line on mobile view */
+
   .line {
     display: none;
   }
 
-  /* Category card width adjustment */
+  
   .category-card {
-    width: 100%; /* Full width for mobile category cards */
-    height: 80px; /* Adjust category card height */
-    margin-bottom: 5px; /* Space between category cards */
+    width: 100%; 
+    height: 80px; 
+    margin-bottom: 5px; 
   }
 }
 
+/* Tablet View (768x1024) Specific Styles */
+@media (width: 768px) and (height: 1024px), 
+       (width: 1024px) and (height: 768px) {
 
+  .items-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
 
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    height: 160px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Image adjustments for tablet view */
+  .item-box img {
+    width: 40%; /* Adjusted image width to 40% */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  .add-to-cart {
+    position: absolute;
+    bottom: 8px;
+    top: 220px;
+    right: 14px;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .dish-name {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -20px!important;
+  }
+
+  .dish-description {
+    font-size: 26px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .left-symbol, .right-symbol {
+    font-size: 20px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .category-card {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Tablet View (Single Column Layout) */
+@media (width: 1280px) and (height: 800px), 
+       (width: 800px) and (height: 1280px) {
+
+  .items-container {
+    display: flex;
+    flex-direction: column; /* Ensures single column layout */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column; /* Single column */
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* Full width */
+    max-width: 600px; /* Adjust for better appearance */
+    height: auto;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+  }
+
+  /* Image adjustments */
+  .item-box img {
+    width: 50%; /* Adjusted for better proportions */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .dish-name {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10px!important;
+  }
+
+  .dish-description {
+    font-size: 30px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .left-symbol, .right-symbol {
+    font-size: 20px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .category-card {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Tablet View (Single Column Layout) */
+@media (width:1024px) and (height: 600px), 
+       (width: 600px) and (height: 1024px),
+       (width: 1024px) and (height: 1366px), 
+       (width: 1366px) and (height: 1024px) {
+
+  .items-container {
+    display: flex;
+    flex-direction: column; /* Ensures single column layout */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column; /* Single column */
+    gap: 15px;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%; /* Full width */
+    max-width: 600px; /* Adjust for better appearance */
+    height: auto;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+  }
+
+  /* Image adjustments */
+  .item-box img {
+    width: 50%; /* Adjusted for better proportions */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .dish-name {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10px!important;
+  }
+
+  .dish-description {
+    font-size: 18px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .left-symbol, .right-symbol {
+    font-size: 20px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .category-card {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+}
 
 
 /* Two-column grid for dishes */
@@ -389,23 +925,24 @@
 /* Media query for mobile view */
 @media (max-width: 768px) {
   .category-title {
-    font-size: 28px; /* Reduce font size for smaller screens */
-    margin-bottom: 20px; /* Adjust bottom margin */
-    margin-top: -30px!important; /* Reduce top margin to fit better */
+    font-size: 28px; 
+    margin-bottom: 20px;
+    margin-top: -30px!important; 
   }
 
   .category-title::before, .category-title::after {
-    height: 1px; /* Keep the line thin */
-    background-color: black; /* Maintain the line color */
-    flex-grow: 1; /* Ensure it spans the remaining space */
+    height: 1px; 
+    background-color: black; 
+    flex-grow: 1; 
   }
 }
 
 
+
+
 /*form datas */
 
-/* Ensure no margin or padding on the body and html elements */
-/* General Reset */
+
 * {
   box-sizing: border-box;
 }
@@ -418,10 +955,10 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Consolidated Form Container */
+
 .form-container {
   position: relative;
-
+  background-image: url('/public/data.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -584,8 +1121,8 @@ input[type="tel"],
 input[type="email"],
 input[type="number"],
 input[type="date"] {
-  width: 100%; /* Ensure inputs take full width if needed */
-  max-width: 500px; /* Optional: Limit the width of inputs */
+  width: 100%;
+  max-width: 500px; 
   padding: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -597,8 +1134,6 @@ input[type="date"] {
   font-size: 20px;
 }
 
-/* Media Queries for Responsiveness */
-/* Media Queries for Responsiveness */
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .form-container {
@@ -644,6 +1179,116 @@ input[type="date"] {
     padding: 0.8rem;
     font-size: 0.9rem;
 	gap:10px;
+  }
+}
+
+@media (max-width: 882px) {
+  .form-container {
+    padding: 0.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1rem; /* Consistent spacing between rows */
+  }
+
+  .form-group {
+    margin-bottom: 1rem; /* Equal bottom spacing between groups */
+  }
+
+  .form-group1 {
+    width: 100%;
+    margin-bottom: 1rem; /* Consistent bottom spacing */
+  }
+
+  .form-group1 label {
+    font-size: 16px;
+  }
+
+  .form-group input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .note-box {
+    font-size: 8px;
+  }
+
+  label {
+    font-size: 18px !important;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    width: 270px;
+    height: 40px;
+	margin-bottom:-10px!important;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 1rem; /* Spacing between checkbox options */
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form-container {
+    padding: 0.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1rem; /* Consistent spacing between rows */
+  }
+
+  .form-group {
+    margin-bottom: 1rem; /* Equal bottom spacing between groups */
+  }
+
+  .form-group1 {
+    width: 100%;
+    margin-bottom: 1rem; /* Consistent bottom spacing */
+  }
+
+  .form-group1 label {
+    font-size: 16px;
+  }
+
+  .form-group input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .note-box {
+    font-size: 8px;
+  }
+
+  label {
+    font-size: 18px !important;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    width: 450px;
+    height: 40px;
+	margin-bottom:-10px!important;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 1rem; /* Spacing between checkbox options */
+    align-items: flex-start;
   }
 }
 
@@ -702,8 +1347,6 @@ input[type="date"] {
   }
 }
 
-
-
 /*form datas */
 
 h2 {
@@ -741,50 +1384,32 @@ h2 {
 .checkbox-row {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Space between the main label and the checkbox group */
+  gap: 1rem; 
 }
 
 /* Styles for each checkbox and its label */
 .checkbox-group label {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between the checkbox and its text */
+  gap: 0.5rem; 
 }
 
 /* Custom styles for the checkboxes */
 .checkbox-group input[type="checkbox"] {
-  width: 20px; /* Custom width */
-  height: 20px; /* Custom height */
-  cursor: pointer; /* Pointer cursor for better UX */
-  border: 2px solid #d3d3d3; /* Border color */
-  background-color: transparent; /* Transparent background */
-  appearance: none; /* Remove default styling */
-  border-radius: 4px; /* Optional: rounded corners */
+  width: 20px; 
+  height: 20px; 
+  cursor: pointer;
+  background-color: transparent; 
+  appearance: none; 
+  border-radius: 4px; 
 }
 
-/* Styles for checked state */
+
 .checkbox-group input[type="checkbox"]:checked {
-  background-color: #333; /* Background color when checked */
-  border-color: #333; /* Border color when checked */
+  background-color: #333; 
+  border-color: #333; 
 }
 
-
-
-
-
-
-
-
-
-
-
-/* App Container */
-
-
-/* Title and Categories Section */
-
-
-/* Form Styling */
 
 
 /* Submit Button */
@@ -873,8 +1498,8 @@ button {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow-y: auto; /* Allow vertical scrolling */
-  background-color: #FFF8E1; /* Custom background color for the page */
+  overflow-y: auto; 
+  background-color: #FFF8E1; 
 }
 
 .categories {
@@ -895,8 +1520,8 @@ button {
   text-align: center;
   border: 2px solid transparent;
   position: relative;
-  width: 150px; /* Adjust the width of the category box */
-  height: 200px; /* Adjust the height of the category box */
+  width: 150px; 
+  height: 200px; 
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -909,7 +1534,7 @@ button {
 
 .category img {
   width: 100%;
-  height: 150px; /* Adjust the height of the image */
+  height: 150px; 
   object-fit: cover;
   border-radius: 8px;
 }
@@ -919,14 +1544,14 @@ button {
   margin-top: 5px;
   color: #333;
   position: absolute;
-  bottom: 10px; /* Position the name at the bottom of the box */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
 }
 
 .category p {
-  font-size: 24px;  /* Increased font size */
+  font-size: 24px;  
   font-weight: bold;
   cursor: pointer;
   margin-top: 5px;
@@ -1011,6 +1636,34 @@ button {
   }
 }
 
+@media (max-width: 10248px) {
+  .main-container {
+    gap: 16px; /* Adjust space between categories and dishes for tablets */
+  }
+
+  .category-column {
+    width: 50%;
+  }
+
+  .category {
+    width: 280px!important; /* Slightly larger category boxes */
+    height: 320px;
+  }
+
+  .category-title {
+    font-size: 40px;
+  }
+
+  .category-card {
+    width: 470px;
+	height:100px;
+    font-size: 35px;
+  }
+
+  .category-card img {
+    height: 180px; /* Slightly increase image height */
+  }
+}
 /* For mobile view (768px or below) */
 @media (max-width: 768px) {
   .main-container {
@@ -1085,57 +1738,44 @@ button {
 }
 
 
-/* categories */
+@media (max-width: 1024px) {
+  .category-column {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center categories */
+    align-items: center;
+  }
 
+  .category {
+    width: 250px!important; /* Smaller width */
+    height: 100px; /* Make height equal to width for a circle */
+    border-radius: 50%; /* Make the category circular */
+    overflow: hidden; /* Ensure the content fits within the circle */
+  }
 
-/* Scroll Arrows */
-.scroll-arrow {
-  background-color: #c9302c;
-  border: 2px solid #ddd;
-  width: 50px; /* Ensure equal width */
-  height: 50px; /* Ensure equal height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  font-size: 28px;
-  font-weight: bold;
-  border-radius: 50%; /* Makes it a perfect circle */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease;
+  .category-card {
+    width: 100%; /* Ensure card takes full width */
+    font-size: 18px; /* Adjust font size for mobile */
+  }
+
+  .category img {
+    width: 100%;
+    height: 100%; /* Make image cover the entire circle */
+    object-fit: cover;
+  }
+
+  .category-title {
+    font-size: 34px;
+  }
+
+  .category h3 {
+    font-size: 26px; /* Adjust font size inside the category */
+  }
+
+  .category p {
+    font-size: 38px; /* Adjust font size inside the category */
+  }
 }
-
-.scroll-arrow:hover {
-  background-color: white;
-}
-
-.scroll-arrow.left {
-  left: -30px;
-}
-
-.scroll-arrow.right {
-  right: -30px;
-}
-
-
-/* Items Container */
-
-
-/* Items Container */
-
-
-
-/* Add to Cart Button */
-
-/* Add to Cart Button */
-
-/* Cart Container */
-
-/* View Cart button aligned right */
 
 
 /* Modal styles to blur background */
@@ -1164,14 +1804,14 @@ button {
 }
 
 textarea {
-  width: 50%; /* Makes the textarea take up full width of its container */
-  height: 150px; /* Adjusts the height of the textarea */
-  padding: 10px; /* Adds padding inside the textarea for better spacing */
-  font-size: 16px; /* Increases font size for better readability */
-  border: 1px solid #ccc; /* Adds a border around the textarea */
-  border-radius: 5px; /* Rounds the corners of the textarea */
-  box-sizing: border-box; /* Ensures padding and border are included in the width/height calculation */
-  resize: vertical; /* Allows users to resize the textarea vertically */
+  width: 50%; 
+  height: 150px; 
+  padding: 10px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  box-sizing: border-box; 
+  resize: vertical; 
 }
 
 /* Optional: Adds some margin to the form group to separate it from other elements */
@@ -1232,23 +1872,23 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px 0; /* Reduced margin */
+  margin: 4px 0;
 }
 
 .quantity-control button {
-  font-size: 16px; /* Smaller font size */
-  padding: 8px;    /* Reduced padding */
+  font-size: 16px; 
+  padding: 8px;   
   background: #000000;
   border: none;
   cursor: pointer;
-  transform: scale(0.8, 1); /* Apply scaling */
+  transform: scale(0.8, 1);
   height:40px;
   width:50px;
 }
 
 .quantity-control span {
-  margin: 0 3px;   /* Reduced margin */
-  font-size: 20px; /* Reduced font size */
+  margin: 0 3px;   
+  font-size: 20px; 
 }
 .full-screen-modal {
   position: fixed;
@@ -1265,8 +1905,8 @@ textarea {
 
 .full-screen-content {
   background-color: #fff;
-  width: 80%; /* Adjust this value to increase or decrease the width */
-  max-width: 1200px; /* Optional: Set a maximum width */
+  width: 80%; 
+  max-width: 1200px; 
   height: auto;
   max-height: 90%;
   overflow-y: auto;
@@ -1289,9 +1929,9 @@ textarea {
 
 .similar-item {
   display: flex;
-  flex-direction: column; /* Stack image and name vertically */
+  flex-direction: column; 
   align-items: center;
-  margin-bottom: 20px; /* Add more space between items */
+  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -1301,15 +1941,15 @@ textarea {
 
 .similar-item img {
   width: 200px;
-  height: 200px; /* Increase height for a better visual effect */
-  margin-bottom: 10px; /* Add space between image and name */
+  height: 200px; 
+  margin-bottom: 10px; 
   border-radius: 8px;
-  object-fit: cover; /* Ensure the image covers the area */
+  object-fit: cover; 
 }
 
 .similar-item p {
   font-size: 20px;
-  margin-bottom: 10px; /* Add space between name and button */
+  margin-bottom: 10px; 
 }
 
 
@@ -1326,15 +1966,15 @@ textarea {
   font-size:25px !important;
 }
 .back-arrow {
-  font-size: 24px; /* Increase this value as needed */
+  font-size: 24px; 
   cursor: pointer;
 }
 
 
 .selected-item-container {
   display: flex;
-  align-items: flex-start; /* Align items to the top */
-  gap: 10px; /* Space between image and details */
+  align-items: flex-start; 
+  gap: 10px; 
 }
 
 .selected-item-image-wrapper {
@@ -1343,9 +1983,9 @@ textarea {
 
 .selected-item-image {
   width: 300px!important;
-  height: 400px!important; /* Adjust height as per your requirement */
+  height: 400px!important; 
   border-radius: 8px;
-  object-fit: cover; /* Ensure the image covers the area without stretching */
+  object-fit: cover; 
 }
 
 .selected-item-info {
@@ -1356,33 +1996,33 @@ textarea {
 .quantity-control {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between buttons and display */
+  gap: 10px; 
   margin: 10px 0;
 }
 .delete-btn {
-  background-color: #c9302c; /* Red background */
-  color: #fff; /* White text color */
-  border: none; /* Remove border */
-  border-radius: 50%; /* Circular shape */
-  width: 32px; /* Width of the button */
-  height: 32px; /* Height of the button */
-  display: flex; /* Center align the icon */
+  background-color: #c9302c; 
+  color: #fff; 
+  border: none; 
+  border-radius: 50%; 
+  width: 32px; 
+  height: 32px; 
+  display: flex; 
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Pointer cursor */
-  font-size: 16px; /* Icon size */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  cursor: pointer; 
+  font-size: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
 .delete-btn:hover {
-  background-color: #a52823; /* Darker red on hover */
-  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: #a52823; 
+  transform: scale(1.1); 
 }
 
 .delete-btn:active {
-  background-color: #8a1e1c; /* Even darker red on click */
-  transform: scale(0.95); /* Shrink slightly on click */
+  background-color: #8a1e1c; 
+  transform: scale(0.95); 
 }
 
 
@@ -1398,38 +2038,38 @@ textarea {
 container {
   display: flex;
   align-items: flex-start;
-  gap: 20px; /* Space between image and details */
+  gap: 20px; 
 }
 
 .selected-item-image-wrapper {
-  flex-shrink: 0; /* Prevent the image from shrinking */
+  flex-shrink: 0; 
 }
 
 
 
 .selected-item-info {
-  flex: 1; /* Allow the details section to take the remaining space */
+  flex: 1; 
 }
 
 .quantity-control {
   display: flex;
   align-items: center;
-  gap: 0; /* Remove space between the elements */
+  gap: 0; 
   margin: 0;
 }
 
 .quantity-control button {
-  padding: 5px 10px; /* Adjust padding for buttons */
-  font-size: 18px; /* Make the font size of the buttons a bit larger */
-  border: 1px solid #ccc; /* Border around the buttons */
-  background-color: #c9302c!important; /* Background color of buttons */
+  padding: 5px 10px; 
+  font-size: 18px; 
+  border: 1px solid #ccc; 
+  background-color: #c9302c!important; 
   cursor: pointer;
-  margin: 0; /* Remove margin around buttons */
+  margin: 0; 
 }
 
 .quantity-control span {
-  font-size: 18px; /* Same font size as the buttons */
-  margin: 0 5px; /* Add a small margin to the left and right of the quantity number */
+  font-size: 18px; 
+  margin: 0 5px; 
 }
 
 .add-to-cart-btn {
@@ -1441,36 +2081,37 @@ container {
 }
 .selected-item-image {
   margin-top: 70px !important;
-  width: 300px !important;  /* Optional: keep this or adjust */
-  height: 650px !important;  /* Enforce height increase */
+  width: 300px !important;  
+  height: 650px !important;  
   border-radius: 8px !important;
   
   margin-bottom: 20px !important;
-  object-fit: contain !important; /* Ensure entire image is visible without distortion */
+  object-fit: contain !important; 
 }
-/* Mobile View: Show Selected Item First, Then Similar Items */
+
+
 @media (max-width: 768px) {
   .modal-layout {
-    flex-direction: column; /* Stack the content vertically */
+    flex-direction: column; 
   }
 
   .selected-item-container {
-    order: 1; /* Display first */
-    margin-bottom: 20px; /* Add spacing below */
+    order: 1; 
+    margin-bottom: 20px; 
   }
 
   .similar-items-container {
-    order: 2; /* Display after the selected item */
-    width: 100%; /* Take full width */
-    padding: 10px 0; /* Adjust padding */
+    order: 2;
+    width: 100%; 
+    padding: 10px 0; 
   }
 
-  /* Adjust styles for similar items */
+ 
   .similar-item {
     display: flex;
-    flex-direction: column; /* Stack content */
-    align-items: center; /* Center-align similar items */
-    margin-bottom: 15px; /* Add spacing between items */
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 15px; 
   }
 
   .similar-item img {
@@ -1482,18 +2123,17 @@ container {
   }
 
   .similar-item p {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px; 
   }
 
-  /* Adjust selected item styles for mobile */
   .selected-item-container {
-    flex-direction: column; /* Stack image and details vertically */
-    align-items: center; /* Center content */
-    gap: 15px; /* Add spacing */
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
   }
 
-  .selected-item-image {
     width: 90%; /* Scale down image width */
+  .selected-item-image {
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px; /* Add spacing below image */
   }
